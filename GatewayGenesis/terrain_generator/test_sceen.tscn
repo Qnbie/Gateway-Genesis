@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccbfpqapds5ui"]
+
+[ext_resource type="PackedScene" uid="uid://76rg1gjqyaym" path="res://terrain_generator/terrain.tscn" id="1_ladoi"]
+[ext_resource type="Script" path="res://terrain_generator/terrain.gd" id="2_xk8p4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("1_ladoi")]
+script = ExtResource("2_xk8p4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.830926, 0.556383, 0, -0.556383, 0.830926, 0, 1.67605, 2.21637)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.830926, 0.556383, 0, -0.556383, 0.830926, 1.64448, 1.18348, -0.511131)
