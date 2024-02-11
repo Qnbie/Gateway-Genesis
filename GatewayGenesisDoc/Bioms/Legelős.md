@@ -1,5 +1,3 @@
-
-
 # Kőkor
 Kedves tehenek, nyulak és birkák legelésznek 
 
@@ -10,3 +8,8 @@ Farmer állatok egy kis kedves vallással
 Tirant - Tehenek
 Rendfentartó - Birkák
 Elnyomott - Nyulak
+
+# Mobs
+[[Tehén]]
+[[Nyúl]]
+[[Birka]]

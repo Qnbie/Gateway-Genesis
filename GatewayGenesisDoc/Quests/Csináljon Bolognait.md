@@ -1,0 +1,16 @@
+# Requirements
+- Tészta
+	- Liszt
+		- Gabona
+			- Középkor legelő
+	- Tojás
+		- Sasok
+	- Víz
+		- Bármelyik hely ami nem a sivatag
+- Szósz
+	- Paradicsom
+		- Középkor legelő
+	- Hús
+		- Legelő állatok
+- Főzés
+	- Gyikok az új korban

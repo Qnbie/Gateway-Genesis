@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "d9c6d2f7e464c9de",
+        "id": "8c6f8f398741f195",
         "type": "tabs",
         "children": [
           {
-            "id": "117e6d17e6c3030c",
+            "id": "9bfa23b53115d822",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Welcome.md",
-                "mode": "source",
-                "source": false
+                "file": "Systems/GameMechanics.canvas",
+                "viewState": {
+                  "x": 253,
+                  "y": -84,
+                  "zoom": 0
+                }
               }
-            }
-          }
-        ]
-      },
-      {
-        "id": "51f37918f3fb3d75",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "335d85d7c9a62703",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
             }
           }
         ]
@@ -99,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "Systems/GameMechanics.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "Systems/GameMechanics.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md"
+                "file": "Systems/GameMechanics.canvas"
               }
             }
           }
@@ -160,8 +149,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "117e6d17e6c3030c",
+  "active": "9bfa23b53115d822",
   "lastOpenFiles": [
-    "Welcome.md"
+    "Systems/Character setup.canvas",
+    "Quests/Szerezz meg valami eszközt ami megold valami problémát.md",
+    "Quests/Főzz valamit.md",
+    "Quests/Csináljon Bolognait.md",
+    "Mob/Inter-dimensional police drones.md",
+    "Lore/Base lore.md",
+    "Items/Gyapjú.md",
+    "Items/Bőr.md",
+    "Items/Artifacts.md",
+    "Bioms/Legelős.md",
+    "Bioms/Hegyes.md",
+    "Archive/Item BS.canvas",
+    "Archive/Brainstorm.canvas",
+    "Systems/Game loop.canvas",
+    "Lore",
+    "Systems/Dialog system.md",
+    "Systems/Designe questions.md",
+    "Systems/Crime.md",
+    "Systems/Characters.md",
+    "Mob/CrabPeople.md",
+    "Systems/GameMechanics.canvas",
+    "Systems",
+    "Mob/Kecskék.md",
+    "Mob/Sasok.md",
+    "Items/Tojás.md",
+    "Bioms/Sivatag.md",
+    "Quests",
+    "Bioms/Vizes - DLC.md",
+    "Mob/Gyíkok.md",
+    "Mob/Birka.md",
+    "Mob/Tehén.md",
+    "Items/Toll.md",
+    "Items/Mineral.md",
+    "Mob",
+    "Items"
   ]
 }

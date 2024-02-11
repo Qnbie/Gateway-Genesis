@@ -1,3 +1,11 @@
+---
+tags:
+  - biom
+---
+Mobok
+- [[Kecskék]]
+- [[Sasok]]
+
 Itt lennének vulkánok
 
 # Kőkor

@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"55eb2e1b57de5c97","x":-272,"y":-65,"width":250,"height":60,"type":"text","text":"Material"},
+		{"id":"1f1a100e265de6e0","x":165,"y":6,"width":250,"height":60,"type":"text","text":"Gyapju"},
+		{"id":"2bfe6c844a63c351","x":165,"y":-65,"width":250,"height":60,"type":"text","text":"Hús"},
+		{"id":"53ee5035ace2ff7d","x":165,"y":-140,"width":250,"height":60,"type":"text","text":"Tej"},
+		{"id":"4d2e55cccc605f78","x":-272,"y":300,"width":250,"height":60,"type":"text","text":"Process"},
+		{"id":"fb8411da7bfe6aa6","x":165,"y":240,"width":250,"height":60,"type":"text","text":"Cook"},
+		{"id":"f617b75caa9fc574","x":165,"y":360,"width":250,"height":60,"type":"text","text":"Guidance"}
+	],
+	"edges":[
+		{"id":"7c40f86a21d3024f","fromNode":"55eb2e1b57de5c97","fromSide":"right","toNode":"53ee5035ace2ff7d","toSide":"left"},
+		{"id":"f84118d0b43554f9","fromNode":"55eb2e1b57de5c97","fromSide":"right","toNode":"2bfe6c844a63c351","toSide":"left"},
+		{"id":"f17beaa21fca1dfa","fromNode":"55eb2e1b57de5c97","fromSide":"right","toNode":"1f1a100e265de6e0","toSide":"left"},
+		{"id":"ec3507d1df33ded3","fromNode":"4d2e55cccc605f78","fromSide":"right","toNode":"fb8411da7bfe6aa6","toSide":"left"},
+		{"id":"504ba774b15a68e6","fromNode":"4d2e55cccc605f78","fromSide":"right","toNode":"f617b75caa9fc574","toSide":"left"}
+	]
+}

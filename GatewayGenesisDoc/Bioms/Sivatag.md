@@ -1,4 +1,4 @@
-Itt laknak a gyikok
+Itt laknak a [[Gyíkok]]
 
 # Kőkor
 Kb csak kaktuszok meg gyikok lennének itt
