@@ -15,9 +15,9 @@
               "state": {
                 "file": "Systems/GameMechanics.canvas",
                 "viewState": {
-                  "x": 253,
-                  "y": -84,
-                  "zoom": 0
+                  "x": -35,
+                  "y": -79.5,
+                  "zoom": -0.5720894194067594
                 }
               }
             }
@@ -151,7 +151,12 @@
   },
   "active": "9bfa23b53115d822",
   "lastOpenFiles": [
-    "Systems/Character setup.canvas",
+    "Systems/Crime.md",
+    "Systems/Characters.md",
+    "Systems/Designe questions.md",
+    "Systems/Dialog system.md",
+    "Systems/Game loop.canvas",
+    "Systems/GameMechanics.canvas",
     "Quests/Szerezz meg valami eszközt ami megold valami problémát.md",
     "Quests/Főzz valamit.md",
     "Quests/Csináljon Bolognait.md",
@@ -164,14 +169,8 @@
     "Bioms/Hegyes.md",
     "Archive/Item BS.canvas",
     "Archive/Brainstorm.canvas",
-    "Systems/Game loop.canvas",
     "Lore",
-    "Systems/Dialog system.md",
-    "Systems/Designe questions.md",
-    "Systems/Crime.md",
-    "Systems/Characters.md",
     "Mob/CrabPeople.md",
-    "Systems/GameMechanics.canvas",
     "Systems",
     "Mob/Kecskék.md",
     "Mob/Sasok.md",
