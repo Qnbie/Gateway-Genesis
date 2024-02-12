@@ -15,8 +15,8 @@
               "state": {
                 "file": "Systems/GameMechanics.canvas",
                 "viewState": {
-                  "x": -35,
-                  "y": -79.5,
+                  "x": -565.7430203045686,
+                  "y": 7.024492385786857,
                   "zoom": -0.5720894194067594
                 }
               }
@@ -72,7 +72,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "a02ad30d522b786a",
@@ -151,12 +151,13 @@
   },
   "active": "9bfa23b53115d822",
   "lastOpenFiles": [
+    "Systems/Untitled.canvas",
+    "Systems/GameMechanics.canvas",
     "Systems/Crime.md",
     "Systems/Characters.md",
     "Systems/Designe questions.md",
     "Systems/Dialog system.md",
     "Systems/Game loop.canvas",
-    "Systems/GameMechanics.canvas",
     "Quests/Szerezz meg valami eszközt ami megold valami problémát.md",
     "Quests/Főzz valamit.md",
     "Quests/Csináljon Bolognait.md",
