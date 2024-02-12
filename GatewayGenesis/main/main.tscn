@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw74utk3cctt2"]
+
+[ext_resource type="PackedScene" uid="uid://b23ktxmvb6ftb" path="res://main/rende_effect.tscn" id="1_jix00"]
+[ext_resource type="PackedScene" uid="uid://b3frn2pjrnbea" path="res://main/enemy_bari_base.tscn" id="2_2r1ui"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yr4wb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_1hjoe"]
+sky_material = SubResource("ProceduralSkyMaterial_yr4wb")
+
+[sub_resource type="Environment" id="Environment_3cskw"]
+background_mode = 2
+sky = SubResource("Sky_1hjoe")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3cskw")
+
+[node name="Rende_effect" parent="." instance=ExtResource("1_jix00")]
+
+[node name="Root Scene" parent="." instance=ExtResource("2_2r1ui")]

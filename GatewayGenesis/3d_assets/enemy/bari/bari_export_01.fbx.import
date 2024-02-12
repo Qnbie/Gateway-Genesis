@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://be0fnycv6jjgs"
-path="res://.godot/imported/bari_to_godot_02.fbx-80db985f6b88f01454df90f9f4db84b8.scn"
+uid="uid://dmbv5ktq1mlxd"
+path="res://.godot/imported/bari_export_01.fbx-211c5210285841eb9eeab05c10fa91e9.scn"
 
 [deps]
 
-source_file="res://3d_assets/enemy/bari/bari_to_godot_02.fbx"
-dest_files=["res://.godot/imported/bari_to_godot_02.fbx-80db985f6b88f01454df90f9f4db84b8.scn"]
+source_file="res://3d_assets/enemy/bari/bari_export_01.fbx"
+dest_files=["res://.godot/imported/bari_export_01.fbx-211c5210285841eb9eeab05c10fa91e9.scn"]
 
 [params]
 
@@ -33,8 +33,8 @@ _subresources={
 "animations": {
 "attack": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://3d_assets/enemy/bari_to_godot_02.fbm/bari_attack.res",
+"save_to_file/keep_custom_tracks": "",
+"save_to_file/path": "",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -1832,8 +1832,8 @@ _subresources={
 },
 "hit": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://3d_assets/enemy/bari_to_godot_02.fbm/bari_hit.res",
+"save_to_file/keep_custom_tracks": "",
+"save_to_file/path": "",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -3631,8 +3631,8 @@ _subresources={
 },
 "idle": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://3d_assets/enemy/bari_to_godot_02.fbm/bari_idle.res",
+"save_to_file/keep_custom_tracks": "",
+"save_to_file/path": "",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -5430,8 +5430,8 @@ _subresources={
 },
 "run": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://3d_assets/enemy/bari_to_godot_02.fbm/bari_run.res",
+"save_to_file/keep_custom_tracks": "",
+"save_to_file/path": "",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -7229,8 +7229,8 @@ _subresources={
 },
 "talk": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://3d_assets/enemy/bari_to_godot_02.fbm/bari_talk.res",
+"save_to_file/keep_custom_tracks": "",
+"save_to_file/path": "",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -9028,8 +9028,8 @@ _subresources={
 },
 "walk": {
 "save_to_file/enabled": true,
-"save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://3d_assets/enemy/bari_to_godot_02.fbm/bari_walk.res",
+"save_to_file/keep_custom_tracks": "",
+"save_to_file/path": "",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -10824,6 +10824,28 @@ _subresources={
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
 "slices/amount": 0
+}
+},
+"meshes": {
+"Root Scene_bari_furr_mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+},
+"Root Scene_bari_mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
 }
 }
 }
