@@ -7,14 +7,27 @@
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_1hjoe"]
+[sub_resource type="Sky" id="Sky_bvx77"]
 sky_material = SubResource("ProceduralSkyMaterial_yr4wb")
 
 [sub_resource type="Environment" id="Environment_3cskw"]
 background_mode = 2
-sky = SubResource("Sky_1hjoe")
+sky = SubResource("Sky_bvx77")
+ambient_light_source = 2
+ambient_light_color = Color(0.992157, 0.988235, 0.952941, 1)
 tonemap_mode = 2
-glow_enabled = true
+ssao_enabled = true
+ssao_intensity = 6.94
+ssao_detail = 0.0
+ssao_sharpness = 0.0
+ssil_radius = 12.05
+glow_intensity = 3.27
+glow_strength = 1.35
+glow_bloom = 0.22
+adjustment_enabled = true
+adjustment_brightness = 1.12
+adjustment_contrast = 1.12
+adjustment_saturation = 1.94
 
 [node name="Main" type="Node3D"]
 
@@ -24,3 +37,4 @@ environment = SubResource("Environment_3cskw")
 [node name="Rende_effect" parent="." instance=ExtResource("1_jix00")]
 
 [node name="Root Scene" parent="." instance=ExtResource("2_2r1ui")]
+transform = Transform3D(0.888857, 0, -0.458184, 0, 1, 0, 0.458184, 0, 0.888857, 0, 0, 0)

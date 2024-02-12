@@ -6,7 +6,7 @@
 shader = ExtResource("1_6vwer")
 shader_parameter/color_depth = 5
 shader_parameter/dithering = true
-shader_parameter/resolution_scale = 3
+shader_parameter/resolution_scale = 4
 
 [node name="Rende_effect" type="CanvasLayer"]
 
@@ -14,6 +14,7 @@ shader_parameter/resolution_scale = 3
 material = SubResource("ShaderMaterial_6yy8f")
 offset_right = 1152.0
 offset_bottom = 648.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -21,5 +22,5 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457817, 1.05567, 0.871614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0269115, 0.874416, 1.24567)
 current = true
