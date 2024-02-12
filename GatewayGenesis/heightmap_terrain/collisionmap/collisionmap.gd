@@ -7,7 +7,7 @@ extends CollisionShape3D
 @onready var snap = Vector3.ONE * template_mesh.size.x/2
 
 func _ready():
-	
+	shape = ConcavePolygonShape3D.new()
 	update_shape()
 	
 func _physics_process(delta):
