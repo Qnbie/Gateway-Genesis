@@ -3,9 +3,10 @@ shader_type spatial;
 render_mode specular_toon;
 
 uniform sampler2D noise;
+uniform float amplitude = 1.0;
 
 float height(vec2 position) {
-	return texture(noise, position / 10.0).x;
+	return texture(noise, position / 10.0).x * amplitude;
 }
 
 void vertex() {

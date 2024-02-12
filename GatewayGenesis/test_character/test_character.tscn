@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbhypnb56p642"]
+
+[ext_resource type="Script" path="res://test_character/test_character.gd" id="1_cvos4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ogn1c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a5wmt"]
+
+[sub_resource type="GDScript" id="GDScript_xqlgr"]
+script/source = "extends Camera3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="TestCharacter" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00039, 0)
+script = ExtResource("1_cvos4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_ogn1c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_a5wmt")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.833356, 0.552737, 0, -0.552737, 0.833356, 0, 2.55773, 3.33618)
+script = SubResource("GDScript_xqlgr")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.964714, -0.263301, 0, 0.2633, 0.964714, 0, -0.28747, -4.19398)
+light_energy = 7.68
+spot_range = 7.14221
+spot_angle = 21.1291
+
+[node name="Label" type="Label" parent="CharacterBody3D"]
+offset_left = 51.0
+offset_top = 36.0
+offset_right = 239.0
+offset_bottom = 85.0
+text = "Escape mouse lock > Esc
+Toggle God Mode > G
+In God Mode
+	Go up > Space
+	Go Down > C"
