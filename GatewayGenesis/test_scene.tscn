@@ -1,26 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5i423flllsbb"]
+[gd_scene load_steps=8 format=3 uid="uid://c5i423flllsbb"]
 
 [ext_resource type="PackedScene" uid="uid://bu3vtmwnoul1u" path="res://test_character/test_player.tscn" id="1_ltpxc"]
 [ext_resource type="PackedScene" uid="uid://cl83dbc272gjk" path="res://heightmap_terrain/clipmap/clipmap.tscn" id="2_tpuik"]
 [ext_resource type="PackedScene" uid="uid://c7xublrnupds4" path="res://heightmap_terrain/collisionmap/collisionmap.tscn" id="3_mt7pj"]
+[ext_resource type="PackedScene" uid="uid://c1y4wcrfbfswi" path="res://test_character/test_npc.tscn" id="4_mlad7"]
+[ext_resource type="Script" path="res://test_character/test_npc.gd" id="5_3tqky"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_j57gt"]
-size = Vector2(16, 16)
-subdivide_width = 16
-subdivide_depth = 16
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fe4qa"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r7drx"]
 
 [node name="TestScene" type="Node3D"]
 
-[node name="TestPlayer" parent="." instance=ExtResource("1_ltpxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.33292, 0)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="Collisionmap" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
-physics_body = NodePath("../../TestPlayer")
-template_mesh = SubResource("PlaneMesh_j57gt")
 
 [node name="Clipmap" parent="StaticBody3D" node_paths=PackedStringArray("player_character") instance=ExtResource("2_tpuik")]
 player_character = NodePath("../../TestPlayer")
 
+[node name="Collisionmap" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
+physics_body = NodePath("../../TestPlayer")
+
+[node name="Collisionmap2" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
+shape = SubResource("ConcavePolygonShape3D_fe4qa")
+physics_body = NodePath("../../TestNpc")
+
+[node name="Collisionmap3" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
+shape = SubResource("ConcavePolygonShape3D_r7drx")
+physics_body = NodePath("../../TestNpc2")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="TestPlayer" parent="." instance=ExtResource("1_ltpxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.33292, 0)
+
+[node name="TestNpc" parent="." instance=ExtResource("4_mlad7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82808, -22.9022)
+script = ExtResource("5_3tqky")
+
+[node name="TestNpc2" parent="." instance=ExtResource("4_mlad7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.21835, 22.947)

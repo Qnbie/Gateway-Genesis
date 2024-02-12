@@ -33,7 +33,7 @@ func _physics_process(delta):
 			velocity.y = SPEED
 		if Input.is_action_just_pressed("god_mode_down"):
 			velocity.y = SPEED * -1
-		if Input.is_action_just_released("god_mode_up") || Input.is_action_just_released("god_mod_down"):
+		if Input.is_action_just_released("god_mode_up") || Input.is_action_just_released("god_mode_down"):
 			velocity.y = 0
 	else:
 		# Add the gravity.
