@@ -11,7 +11,7 @@ albedo_color = Color(0, 1, 0, 1)
 
 [node name="TestPlayer" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_1fc0c")
-camera = NodePath("Camera3d")
+camera = NodePath("MeshInstance3d/Camera3d")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -22,10 +22,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("StandardMaterial3D_0jbkr")
 mesh = SubResource("CapsuleMesh_asxit")
 
-[node name="Camera3d" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.955808, 0.29399, 0, -0.29399, 0.955808, 0, 2.40821, 2.79317)
+[node name="Camera3d" type="Camera3D" parent="MeshInstance3d"]
+transform = Transform3D(1, 0, 0, 0, 0.955808, 0.29399, 0, -0.29399, 0.955808, 0, 1.40821, 2.79317)
+current = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Camera3d"]
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3d/Camera3d"]
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
