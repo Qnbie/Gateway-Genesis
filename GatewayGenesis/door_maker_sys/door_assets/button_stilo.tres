@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://digoh1asww4o2"]
+
+[ext_resource type="FontFile" uid="uid://6exemaoyde00" path="res://fonts/DePixelBreit.ttf" id="1_dql8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7afov"]
+
+[resource]
+Button/colors/font_pressed_color = Color(0.639216, 0, 0, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_dql8a")
+Button/styles/focus = SubResource("StyleBoxEmpty_7afov")
