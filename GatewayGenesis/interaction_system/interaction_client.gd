@@ -3,6 +3,7 @@ extends Node
 class_name InteractionClient
 
 var intreaction_started: bool = false
+var linenum: int = 0
 var initiate_line: String
 var author: String
 var dialog_box: DialogBox
@@ -23,7 +24,7 @@ func initiate_interaction(_name: String):
 	if _name == author:
 		if !intreaction_started:
 			print("initaite " + author)
-			dialog_box.post_message(screen_play.initial_line)
+			dialog_box.post_message([screen_play.initial_line])
 			intreaction_started = true
 	else:
 		stop_interaction(author)
@@ -32,9 +33,13 @@ func trigger_interaction(_interaction_type: InteractionType):
 	if intreaction_started:
 		match _interaction_type:
 			InteractionType.Talk:
-				dialog_box.post_message("talk talk " + author)
+				if linenum < screen_play.content.size():
+					dialog_box.post_dialog(screen_play.content[linenum])
+				else:
+					stop_interaction(author)
+				linenum += 1
 			InteractionType.Craft:
-				dialog_box.post_message("craft craft "  + author)
+				dialog_box.post_status_message("craft craft "  + author)
 	
 		
 func stop_interaction(_name: String):
@@ -42,6 +47,7 @@ func stop_interaction(_name: String):
 		print("stop")
 		intreaction_started = false
 		dialog_box.clear_message()
+		linenum = 0
 
 enum InteractionType{
 	Talk,
