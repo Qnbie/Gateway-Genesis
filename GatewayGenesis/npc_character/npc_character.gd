@@ -10,8 +10,3 @@ func _ready():
 	player_character = get_parent_node_3d().get_player_character()
 	interaction_client = InteractionClient.new()
 	interaction_client.set_up(player_character, name, screen_play)
-	
-
-
-
-

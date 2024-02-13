@@ -2,23 +2,15 @@ extends Node
 
 class_name DialogBox
 
-var message_labels: Array = []
+var labels: Array = []
 
-func get_message(message: Message):
-	var msg = [message, add_new_label(message.text)]
-	message_labels.push_front(msg)
-
-func disconnect_author(author: String):
-	var i = 0
-	while i < message_labels.size():
-		if message_labels[i][0].author == author:
-			remove_child(message_labels[i][1])
-			message_labels.remove_at(i)
-		else:
-			i+=1
-
-func add_new_label(text: String):
+func post_message(message: String):
 	var label = Label.new()
-	label.text = text
+	label.text = message
 	add_child(label)
-	return label
+	labels.push_front(label)
+
+func clear_message():
+	for label in labels:
+		remove_child(label)
+	labels.clear()
