@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5i423flllsbb"]
+[gd_scene load_steps=11 format=3 uid="uid://c5i423flllsbb"]
 
-[ext_resource type="Script" path="res://make_nav_mesh.gd" id="1_cfrc6"]
-[ext_resource type="PackedScene" uid="uid://bu3vtmwnoul1u" path="res://test_character/test_player.tscn" id="1_ltpxc"]
+[ext_resource type="Script" path="res://game_controller.gd" id="1_qy3ry"]
 [ext_resource type="PackedScene" uid="uid://cl83dbc272gjk" path="res://heightmap_terrain/clipmap/clipmap.tscn" id="2_tpuik"]
 [ext_resource type="Shader" path="res://main/ps1.gdshader" id="3_ef26b"]
 [ext_resource type="PackedScene" uid="uid://c7xublrnupds4" path="res://heightmap_terrain/collisionmap/collisionmap.tscn" id="3_mt7pj"]
-[ext_resource type="PackedScene" uid="uid://c1y4wcrfbfswi" path="res://test_character/test_npc.tscn" id="4_mlad7"]
+[ext_resource type="PackedScene" uid="uid://bxg3c0mb7qudr" path="res://npc_character/npc_character.tscn" id="6_jp1a8"]
+[ext_resource type="PackedScene" uid="uid://cxuqii21uhkgn" path="res://player_character/player_character.tscn" id="6_qdw6o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_waph5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -34,44 +34,34 @@ adjustment_brightness = 1.12
 adjustment_contrast = 1.12
 adjustment_saturation = 1.94
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_7u2oa"]
-geometry_parsed_geometry_type = 2
-agent_max_slope = 60.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w0ufq"]
 shader = ExtResource("3_ef26b")
 shader_parameter/color_depth = 5
 shader_parameter/dithering = true
 shader_parameter/resolution_scale = 4
 
-[node name="TestScene" type="Node3D"]
+[node name="TestScene" type="Node3D" node_paths=PackedStringArray("player_character")]
+script = ExtResource("1_qy3ry")
+player_character = NodePath("PlayerCharacter")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fef4u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.07476, 0)
-navigation_mesh = SubResource("NavigationMesh_7u2oa")
-script = ExtResource("1_cfrc6")
-
-[node name="Clipmap" parent="StaticBody3D/NavigationRegion3D" node_paths=PackedStringArray("player_character") instance=ExtResource("2_tpuik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.07476, 0)
-player_character = NodePath("../../../DirectionalLight3D/SubViewportContainer/SubViewport/TestPlayer")
-
 [node name="Collisionmap" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
-physics_body = NodePath("../../DirectionalLight3D/SubViewportContainer/SubViewport/TestPlayer")
+physics_body = NodePath("../../PlayerCharacter")
+
+[node name="Clipmap" parent="StaticBody3D" node_paths=PackedStringArray("player_character") instance=ExtResource("2_tpuik")]
+player_character = NodePath("../../PlayerCharacter")
 
 [node name="Collisionmap2" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
-physics_body = NodePath("../../TestNpc")
-
-[node name="Collisionmap3" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_mt7pj")]
-physics_body = NodePath("../../TestNpc2")
+physics_body = NodePath("../../NpcCharacter")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="DirectionalLight3D"]
+visible = false
 material = SubResource("ShaderMaterial_w0ufq")
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -80,15 +70,13 @@ metadata/_edit_use_anchors_ = true
 [node name="SubViewport" type="SubViewport" parent="DirectionalLight3D/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1152, 648)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
-[node name="TestPlayer" parent="DirectionalLight3D/SubViewportContainer/SubViewport" instance=ExtResource("1_ltpxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.33292, 0)
+[node name="PlayerCharacter" parent="." instance=ExtResource("6_qdw6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.32342, 0)
 
-[node name="TestNpc" parent="." instance=ExtResource("4_mlad7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82808, -22.9022)
-player_node_path = NodePath("../DirectionalLight3D/SubViewportContainer/SubViewport/TestPlayer")
+[node name="NpcCharacter" parent="." instance=ExtResource("6_jp1a8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6137, 3.3063, 0)
 
-[node name="TestNpc2" parent="." instance=ExtResource("4_mlad7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.18886, 22.947)
-player_node_path = NodePath(".")
+[node name="NpcCharacter2" parent="." instance=ExtResource("6_jp1a8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7579, 4.77425, -0.00790405)

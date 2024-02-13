@@ -3,8 +3,6 @@ extends CharacterBody3D
 var player = null
 @export var player_node_path:NodePath
 
-@onready var nav_agent = $NavigationAgent3D
-
 const SPEED = 3.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -15,10 +13,6 @@ func _ready():
 
 func _physics_process(delta):
 	velocity = Vector3.ZERO
-	#if not is_on_floor():
-		#velocity.y -= gravity * delta
-	
-	nav_agent.set_target_position(player.global_transform.origin)
-	var next_nav_point = nav_agent.get_next_path_position()
-	velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 	move_and_slide()
