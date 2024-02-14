@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxuqii21uhkgn"]
+[gd_scene load_steps=8 format=3 uid="uid://cxuqii21uhkgn"]
 
 [ext_resource type="Script" path="res://player_character/player_character.gd" id="1_o2wmr"]
 [ext_resource type="PackedScene" uid="uid://b3mop62b1sisr" path="res://interaction_system/dialog_box/dialog_box.tscn" id="2_jwuei"]
 [ext_resource type="Script" path="res://interaction_system/ray_cast.gd" id="3_rhl5g"]
+[ext_resource type="Script" path="res://player_character/hand.gd" id="4_wfxbs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nmcs2"]
 
@@ -11,11 +12,13 @@ albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5giup"]
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("camera", "raycast", "dialog_box")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("camera", "raycast", "dialog_box", "right_hand", "left_hand")]
 script = ExtResource("1_o2wmr")
 camera = NodePath("Camera3d")
 raycast = NodePath("RayCast3D")
 dialog_box = NodePath("DialogBox")
+right_hand = NodePath("RightHand")
+left_hand = NodePath("LeftHand")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -36,3 +39,9 @@ cam = NodePath("../Camera3d")
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49023, -0.64507)
 current = true
+
+[node name="RightHand" type="MeshInstance3D" parent="."]
+script = ExtResource("4_wfxbs")
+
+[node name="LeftHand" type="MeshInstance3D" parent="."]
+script = ExtResource("4_wfxbs")

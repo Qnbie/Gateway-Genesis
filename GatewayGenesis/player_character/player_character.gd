@@ -5,7 +5,9 @@ class_name PlayerCharacter
 @export var god_mod: bool = false
 @export var camera: Camera3D;
 @export var raycast: PlayerRayCast;
-@export var dialog_box:DialogBox;
+@export var dialog_box: DialogBox;
+@export var right_hand: Hand
+@export var left_hand: Hand
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -14,7 +16,8 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sensitivity = 0.002
 
-signal trigger_interaction(interaction_type: InteractionClient.InteractionType)
+signal trigger_interaction(interaction_type: InteractionClient.InteractionType,)
+signal trigger_loot(hand: Hand.Side)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -40,7 +43,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interaction_talk"):
 		trigger_interaction.emit(InteractionClient.InteractionType.Talk)
 	if Input.is_action_just_pressed("interaction_craft"):
-		trigger_interaction.emit(InteractionClient.InteractionType.Craft)		
+		trigger_interaction.emit(InteractionClient.InteractionType.Craft)
+
+	if Input.is_action_just_pressed("hand_left"):
+		left_hand.use(Hand.Side.Left)
+	if Input.is_action_just_pressed("hand_right"):
+		right_hand.use(Hand.Side.Right)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -54,3 +62,13 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func loot(hand: Hand.Side):
+	trigger_loot.emit(hand)
+
+func add_item(item: String, hand: Hand.Side):
+	match hand:
+		Hand.Side.Left:
+			left_hand.add_item(item)
+		Hand.Side.Right:
+			right_hand.add_item(item)
