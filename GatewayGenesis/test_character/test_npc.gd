@@ -1,9 +1,6 @@
 extends CharacterBody3D
 
-<<<<<<< Updated upstream
 
-const SPEED = 5.0
-=======
 var player = null
 var hostile = true
 
@@ -22,19 +19,10 @@ const SPEED = 3.0
 const ATTACK_RANGE = 2.0
 
 var rng = RandomNumberGenerator.new()
->>>>>>> Stashed changes
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-<<<<<<< Updated upstream
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-		
-	move_and_slide()
-=======
 func _ready():
 	$wait_Timer.start()
 	state_machine = anim_tree.get("parameters/playback")
@@ -112,4 +100,4 @@ func random_walk():
 
 func do_attack():
 	pass
->>>>>>> Stashed changes
+
