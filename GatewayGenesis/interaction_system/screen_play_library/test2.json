@@ -1,9 +1,10 @@
 {
-	"title": "secound kecske",
+	"title": "ball eater",
 	"initial_line": "q > taaaaalk \n e > craaaaaft",
 	"dialog": [
 		"first lineeeee",
 		"secound lineeeee"
 	],
-	"loot": "res://item_system/items/box.tscn"
+	"loot": "",
+	"recipie": ["Ball", "res://item_system/items/box.tscn"]
 }

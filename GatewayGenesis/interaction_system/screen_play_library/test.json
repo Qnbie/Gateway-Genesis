@@ -1,9 +1,10 @@
 {
-	"title": "my_dictionary",
+	"title": "the chees consumer",
 	"initial_line": "q > talk \n e > craft",
 	"dialog": [
 		"first line",
 		"secound line"
 	],
-	"loot": "res://item_system/items/ball.tscn"
+	"loot": "res://item_system/items/ball.tscn",
+	"recipie": ["Box", "res://item_system/items/chees.tscn"] 
 }
