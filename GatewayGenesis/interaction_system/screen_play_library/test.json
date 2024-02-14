@@ -1,8 +1,9 @@
 {
 	"title": "my_dictionary",
 	"initial_line": "q > talk \n e > craft",
-	"content": [
+	"dialog": [
 		"first line",
 		"secound line"
-	]
+	],
+	"loot": "res://item_system/items/ball.tscn"
 }

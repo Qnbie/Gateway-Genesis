@@ -1,0 +1,9 @@
+{
+	"title": "secound kecske",
+	"initial_line": "q > taaaaalk \n e > craaaaaft",
+	"dialog": [
+		"first lineeeee",
+		"secound lineeeee"
+	],
+	"loot": "res://item_system/items/box.tscn"
+}

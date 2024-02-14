@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1etkfv6ho5el"]
+
+[ext_resource type="Script" path="res://item_system/item.gd" id="1_lsu80"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_siasc"]
+
+[node name="Ball" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_siasc")
+script = ExtResource("1_lsu80")

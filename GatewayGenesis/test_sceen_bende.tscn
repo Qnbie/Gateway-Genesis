@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1pomvho8sl50"]
+
+[ext_resource type="PackedScene" uid="uid://cxuqii21uhkgn" path="res://player_character/player_character.tscn" id="1_5mson"]
+[ext_resource type="PackedScene" uid="uid://bjf5xi65vyk4t" path="res://npc_character/npc_kecsi.tscn" id="2_x8xcj"]
+[ext_resource type="JSON" path="res://interaction_system/screen_play_library/test.json" id="3_p5has"]
+[ext_resource type="PackedScene" uid="uid://c7xublrnupds4" path="res://heightmap_terrain/collisionmap/collisionmap.tscn" id="3_y1sn3"]
+[ext_resource type="PackedScene" uid="uid://cl83dbc272gjk" path="res://heightmap_terrain/clipmap/clipmap.tscn" id="4_1irnn"]
+[ext_resource type="JSON" path="res://interaction_system/screen_play_library/test2.json" id="4_js4c2"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1ok5s"]
+vertices = PackedVector3Array(-255.5, 0.5, -255.567, -255.5, 0.5, 255.433, 255.5, 0.5, 255.433, 255.5, 0.5, -255.567)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[node name="TestSceen" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.987092, 0.160157, 0, -0.160157, 0.987092, 0, 11.1794, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92768, 0)
+navigation_mesh = SubResource("NavigationMesh_1ok5s")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_5mson")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7765, 0)
+
+[node name="NpcKecsi" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("2_x8xcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.73025, 6.38831)
+player_character = NodePath("../PlayerCharacter")
+hostile = false
+screen_play_path = ExtResource("3_p5has")
+
+[node name="NpcKecsi2" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("2_x8xcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.51171, -2.55053)
+player_character = NodePath("../PlayerCharacter")
+hostile = false
+screen_play_path = ExtResource("4_js4c2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Collisionmap" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_y1sn3")]
+physics_body = NodePath("../../PlayerCharacter")
+
+[node name="Clipmap" parent="StaticBody3D" node_paths=PackedStringArray("player_character") instance=ExtResource("4_1irnn")]
+player_character = NodePath("../../PlayerCharacter")
+
+[node name="Collisionmap2" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_y1sn3")]
+physics_body = NodePath("../../NpcKecsi")
+
+[node name="Collisionmap3" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("3_y1sn3")]
+physics_body = NodePath("../../NpcKecsi2")
