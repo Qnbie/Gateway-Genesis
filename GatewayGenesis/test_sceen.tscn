@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1pomvho8sl50"]
+
+[ext_resource type="PackedScene" uid="uid://c7xublrnupds4" path="res://heightmap_terrain/collisionmap/collisionmap.tscn" id="2_d5bsr"]
+[ext_resource type="PackedScene" uid="uid://bjf5xi65vyk4t" path="res://npc_character/npc_kecsi.tscn" id="2_l537a"]
+[ext_resource type="PackedScene" uid="uid://cl83dbc272gjk" path="res://heightmap_terrain/clipmap/clipmap.tscn" id="3_kq33x"]
+[ext_resource type="PackedScene" uid="uid://cxuqii21uhkgn" path="res://player_character/player_character.tscn" id="4_y134b"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1ok5s"]
+vertices = PackedVector3Array(-255.5, 0.5, -255.567, -255.5, 0.5, 255.433, 255.5, 0.5, 255.433, 255.5, 0.5, -255.567)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[node name="TestSceen" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.987092, 0.160157, 0, -0.160157, 0.987092, 0, 11.1794, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92768, 0)
+navigation_mesh = SubResource("NavigationMesh_1ok5s")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("4_y134b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7765, 0)
+
+[node name="NpcKecsi" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("2_l537a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 4, 0)
+player_character = NodePath("../PlayerCharacter")
+hostile = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Collisionmap" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("2_d5bsr")]
+physics_body = NodePath("../../PlayerCharacter")
+
+[node name="Clipmap" parent="StaticBody3D" node_paths=PackedStringArray("player_character") instance=ExtResource("3_kq33x")]
+player_character = NodePath("../../PlayerCharacter")
+
+[node name="Collisionmap2" parent="StaticBody3D" node_paths=PackedStringArray("physics_body") instance=ExtResource("2_d5bsr")]
+physics_body = NodePath("../../NpcKecsi")
