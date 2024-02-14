@@ -3,7 +3,11 @@
 [ext_resource type="Script" path="res://heightmap_terrain/clipmap/clipmap.gd" id="1_dgcx2"]
 [ext_resource type="Shader" path="res://heightmap_terrain/clipmap/clipmap.gdshader" id="1_kftco"]
 
+<<<<<<< Updated upstream
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wlro5"]
+=======
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x678h"]
+>>>>>>> Stashed changes
 render_priority = 0
 shader = ExtResource("1_kftco")
 
@@ -17,6 +21,10 @@ script = ExtResource("1_dgcx2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0665827)
+<<<<<<< Updated upstream
 material_override = SubResource("ShaderMaterial_wlro5")
+=======
+material_override = SubResource("ShaderMaterial_x678h")
+>>>>>>> Stashed changes
 mesh = SubResource("PlaneMesh_ptq1f")
 skeleton = NodePath("../..")

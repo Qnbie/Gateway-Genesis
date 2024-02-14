@@ -17,7 +17,7 @@ func _physics_process(delta):
 		update_shape()
 	
 func update_shape():
-	print("Update shape for " + name)
+	#print("Update shape for " + name)
 	for i in faces.size():
 		var global_vert = faces[i] + global_position
 		faces[i].y = Heightmap.get_height(global_vert.x,global_vert.z)

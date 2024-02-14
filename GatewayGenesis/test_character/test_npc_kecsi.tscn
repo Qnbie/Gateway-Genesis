@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1y4wcrfbfswi"]
+[gd_scene load_steps=6 format=3 uid="uid://bjf5xi65vyk4t"]
 
-[ext_resource type="Script" path="res://test_character/test_npc.gd" id="1_ddo4l"]
+[ext_resource type="Script" path="res://test_character/test_npc.gd" id="1_het5k"]
+[ext_resource type="PackedScene" uid="uid://dswy6yjkpw3rw" path="res://main/enemy_kecsi_base.tscn" id="2_duklo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0eqp"]
+radius = 0.537774
+height = 1.88987
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64whf"]
 albedo_color = Color(1, 0, 0, 1)
@@ -10,21 +13,20 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a4e33"]
 
 [node name="TestNpc" type="CharacterBody3D"]
-script = ExtResource("1_ddo4l")
+script = ExtResource("1_het5k")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0393022, 0.944513, 0)
 shape = SubResource("CapsuleShape3D_b0eqp")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_64whf")
 mesh = SubResource("CapsuleMesh_a4e33")
-<<<<<<< Updated upstream
-=======
 
-[node name="Root Scene" parent="." instance=ExtResource("2_4n6pt")]
-transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, 0, 0)
+[node name="Root Scene" parent="." instance=ExtResource("2_duklo")]
+transform = Transform3D(-1.3, 0, -1.1365e-07, 0, 1.3, 0, 1.1365e-07, 0, -1.3, 0, 0, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 2.0
@@ -39,4 +41,3 @@ max_speed = 2.0
 [node name="wait_Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
->>>>>>> Stashed changes
