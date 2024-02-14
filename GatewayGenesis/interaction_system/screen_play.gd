@@ -4,7 +4,7 @@ class_name ScreenPlay
 
 var title: String
 var initial_line: String
-var content: Array
+var dialog: Array
 var loot: String
 
 func load_json(json_resource: Resource):
@@ -13,5 +13,5 @@ func load_json(json_resource: Resource):
 	var data = json.parse_string(file.get_as_text())
 	title = data.title
 	initial_line = data.initial_line
-	content = data.content
+	dialog = data.dialog
 	loot = data.loot

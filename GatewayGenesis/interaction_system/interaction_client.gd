@@ -27,8 +27,11 @@ func set_up(
 	
 func initiate_interaction(_name: String):
 	if _name == author:
+		var message = [screen_play.initial_line]
+		if has_loot:
+			message.push_back("has loot")
 		if !intreaction_started:
-			dialog_box.post_message([screen_play.initial_line])
+			dialog_box.post_message(message)
 			intreaction_started = true
 	else:
 		stop_interaction(author)
@@ -37,8 +40,8 @@ func trigger_interaction(_interaction_type: InteractionType):
 	if intreaction_started:
 		match _interaction_type:
 			InteractionType.Talk:
-				if linenum < screen_play.content.size():
-					dialog_box.post_dialog(screen_play.content[linenum])
+				if linenum < screen_play.dialog.size():
+					dialog_box.post_dialog(screen_play.dialog[linenum])
 				else:
 					stop_interaction(author)
 				linenum += 1
@@ -55,6 +58,8 @@ func stop_interaction(_name: String):
 func loot(hand: Hand.Side):
 	if intreaction_started && has_loot:
 		player_character.add_item(screen_play.loot, hand)
+		has_loot = false
+		dialog_box.post_message([screen_play.initial_line])
 	
 enum InteractionType{
 	Talk,
