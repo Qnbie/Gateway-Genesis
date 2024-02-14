@@ -22,6 +22,13 @@ signal trigger_loot(hand: Hand.Side)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var collisionmap = Collisionmap.new()
+	collisionmap.physics_body = self
+	var playground = get_node("../Playground")
+	if playground == null:
+		print("playground is null")
+	playground.add_child(collisionmap)
+
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
