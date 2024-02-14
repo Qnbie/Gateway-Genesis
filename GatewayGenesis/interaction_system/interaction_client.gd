@@ -2,6 +2,8 @@ extends Node
 
 class_name InteractionClient
 
+@export var has_loot = true
+
 var intreaction_started: bool = false
 var linenum: int = 0
 var initiate_line: String
@@ -51,12 +53,9 @@ func stop_interaction(_name: String):
 		linenum = 0
 
 func loot(hand: Hand.Side):
-	match hand:
-		Hand.Side.Left:
-			player_character.add_item("res://item_system/items/box.tscn", hand)
-		Hand.Side.Right:
-			player_character.add_item("res://item_system/items/ball.tscn", hand)
-
+	if intreaction_started && has_loot:
+		player_character.add_item(screen_play.loot, hand)
+	
 enum InteractionType{
 	Talk,
 	Craft

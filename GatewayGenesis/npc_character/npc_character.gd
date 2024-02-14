@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var player_character: CharacterBody3D
 @export var hostile = true
+@export var screen_play_path: Resource
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = get_node("Root Scene").get_child(2)
@@ -20,7 +21,7 @@ func _ready():
 	$wait_Timer.start()
 	state_machine = anim_tree.get("parameters/playback")
 	var screen_play = ScreenPlay.new()
-	screen_play.load_json("test.json")
+	screen_play.load_json(screen_play_path)
 	interaction_client = InteractionClient.new()
 	interaction_client.set_up(player_character, name, screen_play)
 

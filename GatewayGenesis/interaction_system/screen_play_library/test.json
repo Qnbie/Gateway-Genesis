@@ -4,5 +4,6 @@
 	"content": [
 		"first line",
 		"secound line"
-	]
+	],
+	"loot": "res://item_system/items/ball.tscn"
 }
