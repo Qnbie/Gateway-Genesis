@@ -16,11 +16,19 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sensitivity = 0.002
 
-signal trigger_interaction(interaction_type: InteractionClient.InteractionType,)
+signal trigger_dialog()
+signal trigger_craft(items: Array)
 signal trigger_loot(hand: Hand.Side)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var collisionmap = Collisionmap.new()
+	collisionmap.physics_body = self
+	var playground = get_node("../Playground")
+	if playground == null:
+		print("playground is null")
+	playground.add_child(collisionmap)
+
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -41,9 +49,11 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("interaction_talk"):
-		trigger_interaction.emit(InteractionClient.InteractionType.Talk)
+		trigger_dialog.emit()
 	if Input.is_action_just_pressed("interaction_craft"):
-		trigger_interaction.emit(InteractionClient.InteractionType.Craft)
+		trigger_craft.emit([
+			right_hand.get_item_name(),
+			left_hand.get_item_name()])
 
 	if Input.is_action_just_pressed("hand_left"):
 		left_hand.use(Hand.Side.Left)
@@ -72,3 +82,15 @@ func add_item(item: String, hand: Hand.Side):
 			left_hand.add_item(item)
 		Hand.Side.Right:
 			right_hand.add_item(item)
+
+func exchange_item(recipie: Array):
+	for i in range(recipie.size() - 1):
+		if recipie[i] == right_hand.get_item_name():
+			right_hand.drop_item()
+			continue
+		if recipie[i] == left_hand.get_item_name():
+			left_hand.drop_item()
+	if right_hand.empty:
+		right_hand.add_item(recipie[recipie.size() - 1])
+	else:
+		left_hand.add_item(recipie[recipie.size() - 1])

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6useh06uxvd7"]
+
+[ext_resource type="Script" path="res://item_system/items/chees.gd" id="1_lt8ml"]
+
+[node name="Chees" type="MeshInstance3D"]
+script = ExtResource("1_lt8ml")
