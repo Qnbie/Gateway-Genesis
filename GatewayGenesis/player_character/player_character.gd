@@ -12,6 +12,10 @@ class_name PlayerCharacter
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+var knock_back = Vector3.ZERO
+
+signal meele_attack
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sensitivity = 0.002
@@ -27,6 +31,7 @@ func _input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		emit_signal("meele_attack")
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
@@ -55,12 +60,13 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * SPEED + knock_back.x
+		velocity.z = direction.z * SPEED + knock_back.z
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	velocity += knock_back
+	knock_back = lerp(knock_back, Vector3.ZERO, 0.1)
 	move_and_slide()
 
 func loot(hand: Hand.Side):
