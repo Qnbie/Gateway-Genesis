@@ -27,7 +27,7 @@ func _ready():
 		if attack_type == "Ranged":
 			$"../Root Scene".attack_point.connect(projectal_spray)
 	if not Npc:
-		$"..".meele_attack.connect(spawn_projectal)
+		$"..".meele_attack.connect(try_melee)
 
 func _physics_process(delta):
 	if hit_points < 0 and Npc:
@@ -40,6 +40,9 @@ func knock_back(target):
 	target.get_parent().knock_back = explosion_force
 
 func do_damage(target):
+	if not target.Npc:
+		print(target, "Im player")
+		target.get_parent().get_child(4).add_trauma(0.2)
 	target.hit_points -= meele_damage
 	print(target.hit_points)
 	if target.Npc:

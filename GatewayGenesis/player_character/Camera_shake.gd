@@ -1,8 +1,8 @@
 extends Camera3D
 
-@export var decay = 2  # How quickly the shaking stops [0, 1].
+@export var decay = 1.5  # How quickly the shaking stops [0, 1].
 @export var max_offset = Vector2(100, 75)  # Maximum hor/ver shake in pixels.
-@export var max_roll = 0.1  # Maximum rotation in radians (use sparingly).
+@export var max_roll = 0.07  # Maximum rotation in radians (use sparingly).
 
 var trauma = 0.0  # Current shake strength.
 var trauma_power = 2  # Trauma exponent. Use [2, 3].
