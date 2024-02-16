@@ -68,6 +68,9 @@ func _physics_process(delta):
 		"death":
 			await anim_tree.animation_finished
 			queue_free()
+		"RESET":
+			anim_tree.set("parameters/conditions/reset", false)
+			anim_tree.set("parameters/conditions/hit", true)
 			
 	anim_tree.set("parameters/conditions/run", hostile)
 	anim_tree.set("parameters/conditions/attack", target_in_range())

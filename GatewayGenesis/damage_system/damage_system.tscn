@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs01wtptu24s4"]
+[gd_scene load_steps=5 format=3 uid="uid://cs01wtptu24s4"]
 
 [ext_resource type="Script" path="res://damage_system/Damage_system.gd" id="1_5vdwo"]
 [ext_resource type="PackedScene" uid="uid://mqjaf0hjdy30" path="res://damage_system/projectile.tscn" id="2_y1exi"]
+[ext_resource type="PackedScene" uid="uid://borwh047sxxwr" path="res://damage_system/hit_vfx.tscn" id="3_ufbd3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4tgyh"]
 size = Vector3(0.597656, 1.70731, 1)
@@ -11,6 +12,7 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_5vdwo")
 projectal = ExtResource("2_y1exi")
+hit_vfx = ExtResource("3_ufbd3")
 
 [node name="DS_coll" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0283203, 0.854202, 0)

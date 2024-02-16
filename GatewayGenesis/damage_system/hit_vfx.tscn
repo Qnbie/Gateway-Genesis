@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://borwh047sxxwr"]
+
+[ext_resource type="Script" path="res://damage_system/hit_vfx.gd" id="1_v2enf"]
+
+[sub_resource type="Curve" id="Curve_o15o8"]
+_data = [Vector2(0, 1), 0.0, 0.105006, 0, 0, Vector2(0.339535, 0.901099), -0.853175, -0.853175, 0, 0, Vector2(0.753488, 0.0659339), -0.764383, -0.764383, 0, 0, Vector2(1, 0), -0.0369164, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_vva06"]
+curve = SubResource("Curve_o15o8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y8mp0"]
+lifetime_randomness = 0.46
+angle_max = 416.5
+radial_velocity_min = 2.0
+radial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_vva06")
+turbulence_noise_speed_random = 1.46
+
+[sub_resource type="SphereMesh" id="SphereMesh_ocm47"]
+radius = 0.2
+height = 0.4
+radial_segments = 8
+rings = 3
+
+[node name="hit_vfx" type="Node3D"]
+script = ExtResource("1_v2enf")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_y8mp0")
+draw_pass_1 = SubResource("SphereMesh_ocm47")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

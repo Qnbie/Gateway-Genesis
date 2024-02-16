@@ -12,6 +12,8 @@ class_name Damage_system
 @export var bullet_density = 0.2
 @export var projectal:PackedScene
 
+@export var hit_vfx:PackedScene
+
 @onready var melee_ray = $Melee_ray
 @onready var pr_spawn = $projectal_spawn
 #@onready var projectal = preload("res://damage_system/projectile.tscn")
@@ -27,9 +29,11 @@ func _ready():
 		if attack_type == "Ranged":
 			$"../Root Scene".attack_point.connect(projectal_spray)
 	if not Npc:
-		$"..".meele_attack.connect(try_melee)
+		$"..".meele_attack.connect(spawn_projectal)
 
 func _physics_process(delta):
+	if not Npc:
+		$"../ProgressBar".value = hit_points
 	if hit_points < 0 and Npc:
 		get_parent().anim_tree.set("parameters/conditions/death", true)
 
@@ -46,6 +50,9 @@ func do_damage(target):
 	target.hit_points -= meele_damage
 	print(target.hit_points)
 	if target.Npc:
+		#if target.get_parent().anim_tree.get("parameters/conditions/hit"):
+		target.get_parent().anim_tree.set("parameters/conditions/reset", true)
+		#if not target.get_parent().anim_tree.get("parameters/conditions/hit"):
 		target.get_parent().anim_tree.set("parameters/conditions/hit", true)
 
 func try_melee():
@@ -53,8 +60,15 @@ func try_melee():
 	if melee_ray.get_collider() != null:
 		if melee_ray.get_collider().is_class("Area3D") and melee_ray.get_collider().is_in_group("charachter"):
 			var target = melee_ray.get_collider()
+			var target_point = melee_ray.get_collision_point()
 			do_damage(target)
 			knock_back(target)
+			spawn_vfx(target_point)
+
+func spawn_vfx(pos):
+	var inst = hit_vfx.instantiate()
+	inst.global_position = pos
+	get_parent().get_parent().add_child(inst)
 
 func spawn_projectal():
 	if not $shoot_cd.is_stopped() and not Npc:

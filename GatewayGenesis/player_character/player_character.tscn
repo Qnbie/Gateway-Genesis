@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxuqii21uhkgn"]
+[gd_scene load_steps=9 format=3 uid="uid://cxuqii21uhkgn"]
 
 [ext_resource type="Script" path="res://player_character/player_character.gd" id="1_o2wmr"]
-[ext_resource type="PackedScene" uid="uid://b3mop62b1sisr" path="res://interaction_system/dialog_box/dialog_box.tscn" id="2_jwuei"]
 [ext_resource type="Script" path="res://interaction_system/ray_cast.gd" id="3_rhl5g"]
 [ext_resource type="Script" path="res://player_character/Camera_shake.gd" id="4_jg7so"]
 [ext_resource type="Script" path="res://player_character/hand.gd" id="4_wfxbs"]
@@ -18,7 +17,7 @@ albedo_color = Color(0, 1, 0, 1)
 script = ExtResource("1_o2wmr")
 camera = NodePath("Camera3d")
 raycast = NodePath("RayCast3D")
-dialog_box = NodePath("DialogBox")
+dialog_box = NodePath("")
 right_hand = NodePath("RightHand")
 left_hand = NodePath("LeftHand")
 
@@ -31,16 +30,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("StandardMaterial3D_5qmab")
 mesh = SubResource("CapsuleMesh_5giup")
 
-[node name="DialogBox" parent="." instance=ExtResource("2_jwuei")]
-offset_left = 320.0
-offset_top = 135.0
-offset_right = 320.0
-offset_bottom = 135.0
-
 [node name="RayCast3D" type="RayCast3D" parent="." node_paths=PackedStringArray("cam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49023, -0.64507)
 script = ExtResource("3_rhl5g")
 cam = NodePath("../Camera3d")
+
+[node name="Damage_system" parent="." instance=ExtResource("5_22xqh")]
 
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49023, -0.64507)
@@ -56,4 +51,10 @@ script = ExtResource("4_wfxbs")
 [node name="LeftHand" type="MeshInstance3D" parent="."]
 script = ExtResource("4_wfxbs")
 
-[node name="Damage_system" parent="." instance=ExtResource("5_22xqh")]
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 5.0
+offset_top = 608.0
+offset_right = 235.0
+offset_bottom = 635.0
+value = 70.0
+show_percentage = false

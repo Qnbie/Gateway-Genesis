@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgqv10o2bqa6e"]
+[gd_scene load_steps=12 format=3 uid="uid://cgqv10o2bqa6e"]
 
 [ext_resource type="Shader" path="res://main/ps1.gdshader" id="1_5sj4b"]
 [ext_resource type="PackedScene" uid="uid://cxuqii21uhkgn" path="res://player_character/player_character.tscn" id="1_7df3e"]
@@ -7,6 +7,7 @@
 [ext_resource type="JSON" path="res://interaction_system/screen_play_library/test2.json" id="4_2ilum"]
 [ext_resource type="PackedScene" uid="uid://bjchdwptgp0gf" path="res://npc_character/npc_bari.tscn" id="6_8no5a"]
 [ext_resource type="PackedScene" uid="uid://dkk55x74y3twk" path="res://npc_character/npc_boci.tscn" id="7_ptaj6"]
+[ext_resource type="PackedScene" uid="uid://b3mop62b1sisr" path="res://interaction_system/dialog_box/dialog_box.tscn" id="8_fxeba"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1ok5s"]
 vertices = PackedVector3Array(8.40623, -9.40089, 5.14503, 9.15623, -9.40089, 1.39503, 8.90623, -9.40089, -6.85497, -176.844, -9.40089, -108.105, 1.65623, -9.40089, 7.89503, 9.15623, -9.40089, 1.39503, 8.40623, -9.40089, 5.14503, 9.40623, -9.40089, 5.14503, 9.15623, -9.40089, 1.39503, 9.40623, -9.40089, 5.14503, 9.90623, -9.40089, 6.64503, 17.1562, -9.40089, 1.14503, 184.656, -9.40089, -108.105, 17.1562, -9.40089, 1.14503, 9.90623, -9.40089, 6.64503, 184.656, -9.40089, 131.895, 1.65623, -9.40089, 9.14503, 1.65623, -9.40089, 7.89503, -176.844, -9.40089, -108.105, -176.844, -9.40089, 131.895, 3.15623, -9.40089, 9.39503, 1.65623, -9.40089, 9.14503, -176.844, -9.40089, 131.895, 184.656, -9.40089, -108.105, -176.844, -9.40089, -108.105, 8.90623, -9.40089, -6.85497, 16.9062, -9.40089, -7.10497, 3.15623, -9.40089, 9.39503, -176.844, -9.40089, 131.895, 184.656, -9.40089, 131.895, 9.90623, -9.40089, 6.64503, 184.656, -9.40089, -108.105, 16.9062, -9.40089, -7.10497, 17.1562, -9.40089, 1.14503)
@@ -50,24 +51,24 @@ transform = Transform3D(1, 0, 0, 0, 0.713544, 0.70061, 0, -0.70061, 0.713544, 0,
 light_energy = 0.111
 shadow_enabled = true
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.745246, 13.201, -0.418225)
-navigation_mesh = SubResource("NavigationMesh_1ok5s")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94429, -10.495, 11.8438)
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68954, 2.70603, 11.4256)
 use_collision = true
 size = Vector3(362.576, 1.49456, 240.898)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0647, -6.56827, -2.78975)
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8099, 6.63273, -3.20798)
 use_collision = true
 size = Vector3(6.85828, 12.1229, 7.2583)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(0.346821, 0, -0.937931, 0, 1, 0, 0.937931, 0, 0.346821, 5.69403, -6.58944, 7.267)
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.346821, 0, -0.937931, 0, 1, 0, 0.937931, 0, 0.346821, 6.43928, 6.61156, 6.84878)
 use_collision = true
 size = Vector3(0.517029, 12.1229, 7.2583)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.558052, 12.8566, -0.336984)
+navigation_mesh = SubResource("NavigationMesh_1ok5s")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_ru2e4")
@@ -80,40 +81,47 @@ handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="PlayerCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_7df3e")]
+[node name="PlayerCharacter" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_7df3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7765, 0)
+dialog_box = NodePath("../../../DialogBox")
 
 [node name="NpcKecsi" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("2_o13f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.86457, 6.38831)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45883, 6.38831)
 player_character = NodePath("../SubViewportContainer/SubViewport/PlayerCharacter")
 hostile = false
 stationary = true
 screen_play_path = ExtResource("3_sgyjp")
 
 [node name="NpcKecsi2" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("2_o13f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.88492, -2.55053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.47918, -2.55053)
 player_character = NodePath("../SubViewportContainer/SubViewport/PlayerCharacter")
 hostile = false
 stationary = true
 screen_play_path = ExtResource("4_2ilum")
 
 [node name="NpcKecsi3" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("6_8no5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52359, 3.8679, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52359, 3.46216, 0)
 player_character = NodePath("../SubViewportContainer/SubViewport/PlayerCharacter")
 hostile = false
 screen_play_path = ExtResource("3_sgyjp")
 
 [node name="NpcBoci" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("7_ptaj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8483, 4.85052, 8.74654)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8483, 4.44478, 8.74654)
 player_character = NodePath("../SubViewportContainer/SubViewport/PlayerCharacter")
 hostile = false
 ATTACK_RANGE = 8.0
 
 [node name="NpcBoci2" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("7_ptaj6")]
-transform = Transform3D(-0.458107, 0, 0.888897, 0, 1, 0, -0.888897, 0, -0.458107, 5.72839, 3.77706, -11.1856)
+transform = Transform3D(-0.458107, 0, 0.888897, 0, 1, 0, -0.888897, 0, -0.458107, 5.72839, 3.48915, -11.1856)
 player_character = NodePath("../SubViewportContainer/SubViewport/PlayerCharacter")
 hostile = false
 ATTACK_RANGE = 8.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gd0u0")
+
+[node name="DialogBox" parent="." instance=ExtResource("8_fxeba")]
+offset_left = 5.0
+offset_top = -31.0
+offset_right = 5.0
+offset_bottom = -31.0
