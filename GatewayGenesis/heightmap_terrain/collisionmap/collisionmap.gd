@@ -1,8 +1,9 @@
 extends CollisionShape3D
 
-@export var physics_body:Node3D
+class_name Collisionmap
 
-@export var template_mesh:PlaneMesh
+@export var physics_body:Node3D
+@export var template_mesh:PlaneMesh = PlaneMesh.new()
 @onready var faces = template_mesh.get_faces()
 @onready var snap = Vector3.ONE * template_mesh.size.x/2
 

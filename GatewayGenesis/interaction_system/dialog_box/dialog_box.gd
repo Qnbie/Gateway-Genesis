@@ -7,6 +7,7 @@ var timer: Timer
 
 func _ready():
 	timer = Timer.new()
+	add_child(timer)
 	timer.one_shot = true
 	timer.timeout.connect(clear_message)
 
