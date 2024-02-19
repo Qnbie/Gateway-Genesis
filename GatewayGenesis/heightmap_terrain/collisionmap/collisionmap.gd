@@ -12,10 +12,13 @@ func _ready():
 	update_shape()
 	
 func _physics_process(delta):
-	var player_rounded_position = physics_body.global_position.snapped(snap) * Vector3(1,0,1)
-	if not global_position == player_rounded_position:
-		global_position = player_rounded_position
-		update_shape()
+	if physics_body == null:
+		queue_free()
+	else:
+		var player_rounded_position = physics_body.global_position.snapped(snap) * Vector3(1,0,1)
+		if not global_position == player_rounded_position:
+			global_position = player_rounded_position
+			update_shape()
 	
 func update_shape():
 	for i in faces.size():

@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkk55x74y3twk"]
+
+[ext_resource type="Script" path="res://npc_character/npc_character.gd" id="1_fps2m"]
+[ext_resource type="JSON" path="res://interaction_system/screen_play_library/test2.json" id="2_cf8hu"]
+[ext_resource type="PackedScene" uid="uid://cun17k6te17cw" path="res://main/enemy_boci_base.tscn" id="2_gb6x3"]
+[ext_resource type="PackedScene" uid="uid://cs01wtptu24s4" path="res://damage_system/damage_system.tscn" id="3_f7aum"]
+[ext_resource type="PackedScene" uid="uid://c4toynh2dnxlk" path="res://damage_system/projectile_tej.tscn" id="5_b2et6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0eqp"]
+radius = 0.537774
+height = 1.88987
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64whf"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a4e33"]
+
+[node name="NpcBoci" type="CharacterBody3D"]
+script = ExtResource("1_fps2m")
+screen_play_path = ExtResource("2_cf8hu")
+ATTACK_RANGE = 30.0
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0393022, 0.944513, 0)
+shape = SubResource("CapsuleShape3D_b0eqp")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_64whf")
+mesh = SubResource("CapsuleMesh_a4e33")
+
+[node name="Root Scene" parent="." instance=ExtResource("2_gb6x3")]
+transform = Transform3D(-1.3, 0, -1.96295e-07, 0, 1.3, 0, 1.96295e-07, 0, -1.3, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+time_horizon_agents = 1.73
+debug_enabled = true
+
+[node name="wait_Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Damage_system" parent="." instance=ExtResource("3_f7aum")]
+Npc = true
+attack_type = "Ranged"
+bullet_density = 0.15
+projectal = ExtResource("5_b2et6")

@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjf5xi65vyk4t"]
+[gd_scene load_steps=7 format=3 uid="uid://bjchdwptgp0gf"]
 
-[ext_resource type="Script" path="res://npc_character/npc_character.gd" id="1_aqedj"]
-[ext_resource type="PackedScene" uid="uid://dswy6yjkpw3rw" path="res://main/enemy_kecsi_base.tscn" id="2_duklo"]
-[ext_resource type="PackedScene" uid="uid://cs01wtptu24s4" path="res://damage_system/damage_system.tscn" id="3_720pu"]
+[ext_resource type="Script" path="res://npc_character/npc_character.gd" id="1_65751"]
+[ext_resource type="PackedScene" uid="uid://bxuwx27fwhmb6" path="res://main/enemy_bari_base.tscn" id="2_qnee2"]
+[ext_resource type="PackedScene" uid="uid://cs01wtptu24s4" path="res://damage_system/damage_system.tscn" id="3_ga7r3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0eqp"]
 radius = 0.537774
@@ -13,8 +13,8 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a4e33"]
 
-[node name="NpcKecsi" type="CharacterBody3D"]
-script = ExtResource("1_aqedj")
+[node name="NpcBari" type="CharacterBody3D"]
+script = ExtResource("1_65751")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0393022, 0.944513, 0)
@@ -26,8 +26,8 @@ visible = false
 material_override = SubResource("StandardMaterial3D_64whf")
 mesh = SubResource("CapsuleMesh_a4e33")
 
-[node name="Root Scene" parent="." instance=ExtResource("2_duklo")]
-transform = Transform3D(-1.3, 0, -1.1365e-07, 0, 1.3, 0, 1.1365e-07, 0, -1.3, 0, 0, 0)
+[node name="Root Scene" parent="." instance=ExtResource("2_qnee2")]
+transform = Transform3D(-1.295, 0, -1.9554e-07, 0, 1.295, 0, 1.9554e-07, 0, -1.295, 0, 0, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
@@ -37,11 +37,5 @@ debug_enabled = true
 wait_time = 3.0
 one_shot = true
 
-
-[node name="Damage_system" parent="." instance=ExtResource("3_720pu")]
+[node name="Damage_system" parent="." instance=ExtResource("3_ga7r3")]
 Npc = true
-
-[node name="NameTag" type="Label3D" parent="."]
-transform = Transform3D(-0.999026, 0, -0.044125, 0, 1, 0, 0.044125, 0, -0.999026, 0, 1.99907, 0)
-text = "My name is "
-

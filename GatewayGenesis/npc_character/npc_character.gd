@@ -2,20 +2,23 @@ extends CharacterBody3D
 
 @export var player_character: CharacterBody3D
 @export var hostile = true
+@export var stationary = false
 @export var screen_play_path: Resource
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = get_node("Root Scene").get_child(2)
 
+signal attack
+
 const SPEED = 3.0
-const ATTACK_RANGE = 2.0
+@export var ATTACK_RANGE = 2.0
 
 var rng = RandomNumberGenerator.new()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var interaction_client: InteractionClient
-var stationary = false
 var random_target_valid
 var state_machine
+var knock_back = Vector3.ZERO
 
 func _ready():
 	$wait_Timer.start()
@@ -35,10 +38,11 @@ func _physics_process(delta):
 			nav_agent.set_target_position(player_character.global_transform.origin)
 			var next_nav_point = nav_agent.get_next_path_position()
 			velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
-			safe_look_at(self,player_character.global_transform.origin)
+			safe_look_at(self,next_nav_point)
 			move_and_slide()
 		"attak":
-			do_attack()
+			safe_look_at(self,player_character.global_transform.origin)
+			emit_signal("attack")
 		"walk":
 			nav_agent.set_target_position(random_target_valid)
 			var next_nav_point = nav_agent.get_next_path_position()
@@ -60,14 +64,21 @@ func _physics_process(delta):
 					print("can't reach :C")
 					$wait_Timer.start()
 		"hit":
-			pass
-		
+			anim_tree.set("parameters/conditions/hit", false)
 		"talk":
 			safe_look_at(self,player_character.global_transform.origin)
-	
+		"death":
+			await anim_tree.animation_finished
+			queue_free()
+		"RESET":
+			anim_tree.set("parameters/conditions/reset", false)
+			anim_tree.set("parameters/conditions/hit", true)
+			
 	anim_tree.set("parameters/conditions/run", hostile)
 	anim_tree.set("parameters/conditions/attack", target_in_range())
-
+	velocity += knock_back
+	knock_back = lerp(knock_back, Vector3.ZERO, 0.1)
+	move_and_slide()
 
 func safe_look_at(node : Node3D, target : Vector3) -> void:
 	var origin : Vector3 = node.global_transform.origin
@@ -96,7 +107,4 @@ func random_walk():
 	var random_target = Vector3((global_position.x + rng.randi_range(-20, 20)), global_position.y, (global_position.z + rng.randi_range(-20, 20)))
 	random_target_valid = NavigationServer3D.map_get_closest_point(get_world_3d().get_navigation_map(), random_target)
 	print(random_target_valid)
-
-func do_attack():
-	pass
 

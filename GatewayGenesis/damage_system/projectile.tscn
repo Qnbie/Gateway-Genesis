@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://mqjaf0hjdy30"]
+
+[ext_resource type="Script" path="res://damage_system/projectile.gd" id="1_0dqhd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4fuwh"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="Projectile" type="RigidBody3D"]
+script = ExtResource("1_0dqhd")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 0.251967
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_4fuwh")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]

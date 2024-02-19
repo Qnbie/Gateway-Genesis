@@ -11,14 +11,11 @@
             "id": "9bfa23b53115d822",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Archive/Brainstorm.canvas",
-                "viewState": {
-                  "x": -565.7430203045686,
-                  "y": 7.024492385786857,
-                  "zoom": -0.5720894194067594
-                }
+                "file": "Bioms/Sivatag.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -88,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Archive/Brainstorm.canvas",
+                "file": "Bioms/Sivatag.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Archive/Brainstorm.canvas",
+                "file": "Bioms/Sivatag.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Archive/Brainstorm.canvas"
+                "file": "Bioms/Sivatag.md"
               }
             }
           }
@@ -149,8 +146,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8d3610b4f87ffd48",
+  "active": "9bfa23b53115d822",
   "lastOpenFiles": [
+    "Bioms/Legelős.md",
+    "Bioms/Hegyes.md",
+    "Bioms/Sivatag.md",
+    "Archive/Brainstorm.canvas",
     "Systems/Untitled.canvas",
     "Systems/GameMechanics.canvas",
     "Systems/Crime.md",
@@ -166,16 +167,13 @@
     "Items/Gyapjú.md",
     "Items/Bőr.md",
     "Items/Artifacts.md",
-    "Bioms/Legelős.md",
     "Archive/Item BS.canvas",
-    "Archive/Brainstorm.canvas",
     "Lore",
     "Mob/CrabPeople.md",
     "Systems",
     "Mob/Kecskék.md",
     "Mob/Sasok.md",
     "Items/Tojás.md",
-    "Bioms/Sivatag.md",
     "Quests",
     "Bioms/Vizes - DLC.md",
     "Mob/Gyíkok.md",
