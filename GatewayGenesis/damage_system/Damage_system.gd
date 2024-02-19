@@ -11,7 +11,7 @@ class_name Damage_system
 @export var num_of_bullets = 4
 @export var bullet_density = 0.2
 @export var projectal:PackedScene
-
+@export var player_camera:Camera3D
 @export var hit_vfx:PackedScene
 
 @onready var melee_ray = $Melee_ray
@@ -46,7 +46,7 @@ func knock_back(target):
 func do_damage(target):
 	if not target.Npc:
 		print(target, "Im player")
-		target.get_parent().get_child(4).add_trauma(0.2)
+		target.player_camera.add_trauma(0.2)
 	target.hit_points -= meele_damage
 	print(target.hit_points)
 	if target.Npc:

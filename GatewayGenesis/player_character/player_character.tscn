@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxuqii21uhkgn"]
+[gd_scene load_steps=13 format=3 uid="uid://cxuqii21uhkgn"]
 
 [ext_resource type="Script" path="res://player_character/player_character.gd" id="1_o2wmr"]
 [ext_resource type="Script" path="res://interaction_system/ray_cast.gd" id="3_rhl5g"]
 [ext_resource type="Script" path="res://player_character/Camera_shake.gd" id="4_jg7so"]
 [ext_resource type="Script" path="res://player_character/hand.gd" id="4_wfxbs"]
 [ext_resource type="PackedScene" uid="uid://cs01wtptu24s4" path="res://damage_system/damage_system.tscn" id="5_22xqh"]
+[ext_resource type="FontFile" uid="uid://b5d35m1r1qtbx" path="res://fonts/DePixelHalbfett.ttf" id="6_21efa"]
+[ext_resource type="Script" path="res://scoore_system/score_Control.gd" id="6_kquc8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nmcs2"]
 
@@ -13,11 +15,31 @@ albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5giup"]
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("camera", "raycast", "dialog_box", "right_hand", "left_hand")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e36t"]
+bg_color = Color(0, 0, 0, 0.294118)
+skew = Vector2(0.32, 0.32)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htwfv"]
+bg_color = Color(0.678431, 0, 0, 1)
+skew = Vector2(0.32, 0.32)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 2
+
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("camera", "raycast", "right_hand", "left_hand")]
 script = ExtResource("1_o2wmr")
 camera = NodePath("Camera3d")
 raycast = NodePath("RayCast3D")
-dialog_box = NodePath("")
 right_hand = NodePath("RightHand")
 left_hand = NodePath("LeftHand")
 
@@ -35,7 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49023, -0.64507)
 script = ExtResource("3_rhl5g")
 cam = NodePath("../Camera3d")
 
-[node name="Damage_system" parent="." instance=ExtResource("5_22xqh")]
+[node name="Damage_system" parent="." node_paths=PackedStringArray("player_camera") instance=ExtResource("5_22xqh")]
+player_camera = NodePath("../Camera3d")
 
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49023, -0.64507)
@@ -52,9 +75,35 @@ script = ExtResource("4_wfxbs")
 script = ExtResource("4_wfxbs")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 5.0
-offset_top = 608.0
-offset_right = 235.0
-offset_bottom = 635.0
-value = 70.0
+offset_left = 15.0
+offset_top = 571.0
+offset_right = 245.0
+offset_bottom = 598.0
+theme_override_styles/background = SubResource("StyleBoxFlat_5e36t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_htwfv")
+value = 10.0
 show_percentage = false
+
+[node name="score_Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_kquc8")
+
+[node name="score_Label" type="Label" parent="score_Control"]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 71.0
+offset_right = 1170.0
+offset_bottom = 145.0
+rotation = -0.207988
+theme_override_colors/font_color = Color(0.74902, 0.6, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.407843, 0.678431, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("6_21efa")
+theme_override_font_sizes/font_size = 50
+text = "6666666"
