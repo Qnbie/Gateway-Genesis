@@ -1,8 +1,8 @@
 #item 
 # Description
-Ancient relics what can be traded 
+Ommm it is what it is > 🪶 
 # Where can be find
-You can trade them with [[Lizard|Lizards]]
+You can gather it from [[Hawk|Hawks]]
 # Backtrack
 ``` dataview
 LIST rows.file.link

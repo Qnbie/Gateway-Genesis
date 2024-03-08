@@ -1,10 +1,6 @@
-#system #unfinished  
+#character #mountain 
 # Description
-#todo 
-# Purpose
-#todo 
-# Technical notes
-#todo 
+These creatures are living in the [[Mountain]].
 # Backtrack
 ``` dataview
 LIST rows.file.link

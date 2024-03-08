@@ -1,9 +1,7 @@
-#system #unfinished  
+#item #unfinished #template
 # Description
 #todo 
-# Purpose
-#todo 
-# Technical notes
+# Where can be find
 #todo 
 # Backtrack
 ``` dataview

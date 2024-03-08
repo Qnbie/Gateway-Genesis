@@ -4,16 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "8c6f8f398741f195",
+        "id": "0194858610c01de3",
         "type": "tabs",
         "children": [
           {
-            "id": "9bfa23b53115d822",
+            "id": "e2d1ac8da00e1724",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bioms/Sivatag.md",
+                "file": "Systems/Dialog system.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f5a5de038649ae83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mainpages/Characters.md",
                 "mode": "source",
                 "source": false
               }
@@ -36,10 +48,8 @@
             "id": "8d3610b4f87ffd48",
             "type": "leaf",
             "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
+              "type": "graph",
+              "state": {}
             }
           },
           {
@@ -48,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#unfinished",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -64,12 +74,23 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "594823c1e496cf12",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 279.5
   },
   "right": {
     "id": "a02ad30d522b786a",
@@ -85,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bioms/Sivatag.md",
+                "file": "Systems/Dialog system.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bioms/Sivatag.md",
+                "file": "Systems/Dialog system.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bioms/Sivatag.md"
+                "file": "Systems/Dialog system.md"
               }
             }
           }
@@ -146,41 +167,50 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9bfa23b53115d822",
+  "active": "e2d1ac8da00e1724",
   "lastOpenFiles": [
-    "Bioms/Legelős.md",
-    "Bioms/Hegyes.md",
-    "Bioms/Sivatag.md",
-    "Archive/Brainstorm.canvas",
-    "Systems/Untitled.canvas",
-    "Systems/GameMechanics.canvas",
-    "Systems/Crime.md",
-    "Systems/Characters.md",
     "Systems/Designe questions.md",
     "Systems/Dialog system.md",
     "Systems/Game loop.canvas",
-    "Quests/Szerezz meg valami eszközt ami megold valami problémát.md",
-    "Quests/Főzz valamit.md",
-    "Quests/Csináljon Bolognait.md",
-    "Mob/Inter-dimensional police drones.md",
-    "Lore/Base lore.md",
-    "Items/Gyapjú.md",
-    "Items/Bőr.md",
+    "Systems/GameMechanics.canvas",
+    "Mainpages/Characters.md",
+    "2 - ToDos and Tasks.md",
+    "Characters/Cow.md",
+    "Characters/Goat.md",
+    "Characters/Hawk.md",
+    "Characters/Lizard.md",
+    "Characters/Police.md",
+    "Characters/Rabbit.md",
+    "Characters/Sheep.md",
+    "Items/Milk.md",
+    "Items/Egg.md",
+    "Untitled 11",
+    "Untitled 10",
+    "Untitled 10/Untitled 9",
+    "Untitled 10/Untitled 8",
+    "Untitled 10/Untitled 7",
+    "Untitled 10/Untitled 6",
+    "Untitled 10/Untitled 5",
+    "Untitled 10/Untitled 4",
+    "Untitled 10/Untitled 3",
+    "Untitled 2",
     "Items/Artifacts.md",
-    "Archive/Item BS.canvas",
-    "Lore",
-    "Mob/CrabPeople.md",
-    "Systems",
-    "Mob/Kecskék.md",
-    "Mob/Sasok.md",
-    "Items/Tojás.md",
-    "Quests",
-    "Bioms/Vizes - DLC.md",
-    "Mob/Gyíkok.md",
-    "Mob/Tehén.md",
-    "Items/Toll.md",
+    "Items/Leather.md",
     "Items/Mineral.md",
-    "Mob",
-    "Items"
+    "Items/Wool.md",
+    "Items/Meat.md",
+    "Locations/Valley.md",
+    "Locations/Desert.md",
+    "Locations/Mountain.md",
+    "Templates/Character template.md",
+    "Items/Feather.md",
+    "1 - Base concept.md",
+    "Systems/Crime.md",
+    "Archive/Brainstorm.canvas",
+    "Archive/Item BS.canvas",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Untitled Diagram.svg",
+    "Systems/Untitled.canvas"
   ]
 }

@@ -1,10 +1,7 @@
-#system #unfinished  
+#character  #desert 
 # Description
-#todo 
-# Purpose
-#todo 
-# Technical notes
-#todo 
+Lizard > 🦎
+Lives at the [[Desert]]
 # Backtrack
 ``` dataview
 LIST rows.file.link

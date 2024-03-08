@@ -1,8 +1,11 @@
 #item 
 # Description
-Ancient relics what can be traded 
+Its leather >  
 # Where can be find
-You can trade them with [[Lizard|Lizards]]
+Can be harvested from the following animals after they killed
+- [[Cow]]
+- [[Goat]]
+- [[Rabbit]]
 # Backtrack
 ``` dataview
 LIST rows.file.link

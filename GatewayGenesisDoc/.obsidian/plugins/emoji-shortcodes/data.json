@@ -1,0 +1,16 @@
+{
+  "immediateReplace": true,
+  "suggester": true,
+  "historyPriority": true,
+  "historyLimit": 100,
+  "history": [
+    ":cow:",
+    ":rabbit:",
+    ":lizard:",
+    ":sheep:",
+    ":cut_of_meat:",
+    ":feather:",
+    ":milk_glass:",
+    ":egg:"
+  ]
+}

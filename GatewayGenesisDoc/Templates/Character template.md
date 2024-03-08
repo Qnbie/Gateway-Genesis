@@ -1,10 +1,5 @@
-#system #unfinished  
+#character #unfinished #template 
 # Description
-#todo 
-# Purpose
-#todo 
-# Technical notes
-#todo 
 # Backtrack
 ``` dataview
 LIST rows.file.link

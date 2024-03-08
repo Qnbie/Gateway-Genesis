@@ -1,10 +1,7 @@
-#system #unfinished  
+#character #valley   
 # Description
-#todo 
-# Purpose
-#todo 
-# Technical notes
-#todo 
+Rabbit > 🐰
+Lives at the [[Valley]]
 # Backtrack
 ``` dataview
 LIST rows.file.link
