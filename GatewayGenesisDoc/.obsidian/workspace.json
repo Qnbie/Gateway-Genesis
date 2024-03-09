@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Systems/Dialog system.md",
+                "file": "Lore/Desert Dimension/Desert.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ca93b2099c695d70",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lore/Valley Dimension/Rabbit.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -106,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Systems/Dialog system.md",
+                "file": "Lore/Valley Dimension/Rabbit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Systems/Dialog system.md",
+                "file": "Lore/Valley Dimension/Rabbit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Systems/Dialog system.md"
+                "file": "Lore/Valley Dimension/Rabbit.md"
               }
             }
           }
@@ -167,45 +180,46 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e2d1ac8da00e1724",
+  "active": "594823c1e496cf12",
   "lastOpenFiles": [
-    "Systems/Designe questions.md",
+    "Gameplay Elements",
+    "Lore/Interdimension Police",
+    "Lore/Valley Dimension/Cow.md",
+    "Lore/Mountain Dimension/Hawk.md",
+    "Lore/Valley Dimension",
+    "Lore/Desert Dimension/Lizard.md",
+    "Lore/Mountain Dimension",
+    "Lore/Untitled.md",
+    "Lore/Desert Dimension/Desert.md",
+    "Lore/Desert Dimension",
     "Systems/Dialog system.md",
+    "Lore",
+    "Systems/Designe questions.md",
     "Systems/Game loop.canvas",
     "Systems/GameMechanics.canvas",
     "Mainpages/Characters.md",
     "2 - ToDos and Tasks.md",
-    "Characters/Cow.md",
-    "Characters/Goat.md",
-    "Characters/Hawk.md",
-    "Characters/Lizard.md",
-    "Characters/Police.md",
-    "Characters/Rabbit.md",
-    "Characters/Sheep.md",
-    "Items/Milk.md",
-    "Items/Egg.md",
+    "Lore/Mountain Dimension/Goat.md",
+    "Lore/Interdimension Police/Police.md",
+    "Lore/Valley Dimension/Rabbit.md",
+    "Lore/Valley Dimension/Sheep.md",
+    "Gameplay Elements/Items/Milk.md",
+    "Gameplay Elements/Items/Egg.md",
     "Untitled 11",
     "Untitled 10",
     "Untitled 10/Untitled 9",
     "Untitled 10/Untitled 8",
     "Untitled 10/Untitled 7",
-    "Untitled 10/Untitled 6",
-    "Untitled 10/Untitled 5",
-    "Untitled 10/Untitled 4",
-    "Untitled 10/Untitled 3",
-    "Untitled 2",
-    "Items/Artifacts.md",
-    "Items/Leather.md",
-    "Items/Mineral.md",
-    "Items/Wool.md",
-    "Items/Meat.md",
-    "Locations/Valley.md",
-    "Locations/Desert.md",
-    "Locations/Mountain.md",
+    "Gameplay Elements/Items/Artifacts.md",
+    "Gameplay Elements/Items/Leather.md",
+    "Gameplay Elements/Items/Mineral.md",
+    "Gameplay Elements/Items/Wool.md",
+    "Gameplay Elements/Items/Meat.md",
+    "Lore/Valley Dimension/Valley.md",
+    "Lore/Mountain Dimension/Mountain.md",
     "Templates/Character template.md",
-    "Items/Feather.md",
+    "Gameplay Elements/Items/Feather.md",
     "1 - Base concept.md",
-    "Systems/Crime.md",
     "Archive/Brainstorm.canvas",
     "Archive/Item BS.canvas",
     "Untitled 1.canvas",
