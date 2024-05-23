@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lore/Valley Dimension/Rabbit.md",
+                "file": "Lore/Interdimension Police/Police.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 279.5
+    "width": 279.5,
+    "collapsed": true
   },
   "right": {
     "id": "a02ad30d522b786a",
@@ -119,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lore/Valley Dimension/Rabbit.md",
+                "file": "Lore/Interdimension Police/Police.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lore/Valley Dimension/Rabbit.md",
+                "file": "Lore/Interdimension Police/Police.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lore/Valley Dimension/Rabbit.md"
+                "file": "Lore/Interdimension Police/Police.md"
               }
             }
           }
@@ -180,8 +181,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "594823c1e496cf12",
+  "active": "ca93b2099c695d70",
   "lastOpenFiles": [
+    "Lore/Valley Dimension/Rabbit.md",
     "Gameplay Elements",
     "Lore/Interdimension Police",
     "Lore/Valley Dimension/Cow.md",
@@ -201,7 +203,6 @@
     "2 - ToDos and Tasks.md",
     "Lore/Mountain Dimension/Goat.md",
     "Lore/Interdimension Police/Police.md",
-    "Lore/Valley Dimension/Rabbit.md",
     "Lore/Valley Dimension/Sheep.md",
     "Gameplay Elements/Items/Milk.md",
     "Gameplay Elements/Items/Egg.md",
@@ -209,7 +210,6 @@
     "Untitled 10",
     "Untitled 10/Untitled 9",
     "Untitled 10/Untitled 8",
-    "Untitled 10/Untitled 7",
     "Gameplay Elements/Items/Artifacts.md",
     "Gameplay Elements/Items/Leather.md",
     "Gameplay Elements/Items/Mineral.md",

@@ -28,7 +28,7 @@ func _ready():
 	name = screen_play.title
 	interaction_client = InteractionClient.new()
 	interaction_client.set_up(player_character, name, screen_play)
-	get_node("NameTag").text = name
+	#get_node("NameTag").text = name
 	
 func _physics_process(delta):
 	velocity = Vector3.ZERO
